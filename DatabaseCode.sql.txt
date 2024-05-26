@@ -1,0 +1,45 @@
+Use Ecom; 
+
+--//Users Table
+CREATE TABLE USERS(
+UserID INT Identity(1,1) PRIMARY KEY,
+Name varchar(256) NULL,
+Password varchar(256) NOT NULL,
+Email varchar(256) NULL,
+CreatedAt DATETIME2 DEFAULT GETDATE()
+);
+
+--// Products 
+CREATE TABLE Products(
+ProductID INT Identity(1,1) PRIMARY KEY,
+Name VARCHAR(255) NOT NULL,
+Description VARCHAR(255) NOT NULL,
+Image_URL VARCHAR(255) NOT NULL,
+Price Decimal(10,2) NOT NULL,
+CreatedAt DATETIME2 DEFAULT GETDATE()
+)
+
+--// Orders
+CREATE TABLE Orders(
+OrderID INT Identity(1,1) PRIMARY KEY,
+UserID INT, FOREIGN KEY(UserID) REFERENCES Users(UserID),
+Total DECIMAL(10, 2) NOT NULL,
+CreatedAt DATETIME2 DEFAULT GETDATE()
+)
+
+--// Order Details
+CREATE TABLE OrdersDetails(
+OrderDetailsID INT Identity(1,1) PRIMARY KEY,
+OrderID INT, FOREIGN KEY(OrderID) REFERENCES Orders(OrderID),
+ProductID INT, FOREIGN KEY(ProductID) REFERENCES Products(ProductID),
+Quantity INT DEFAULT 1,
+Price Decimal(10,2) NOT NULL,
+)
+CREATE TABLE Reviews(
+ReviewID  INT Identity(1,1) PRIMARY KEY,
+ProductID INT, FOREIGN KEY(ProductID) REFERENCES Products(ProductID),
+UserID INT, FOREIGN KEY(UserID) REFERENCES Users(UserID),
+Rating INT CONSTRAINT CHK_Review_Rating CHECK (rating >= 1 AND rating <= 5),
+Comment TEXT,
+CreatedAt DATETIME2 DEFAULT GETDATE(),
+)

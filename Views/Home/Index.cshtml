@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Ecommerce Store";
+}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/LandingPage.css" type="text/css">
+   
+</head>
+<body>
+    <section class="width-full padding-y-12 background-gray-100">
+        <div style="display:flex; align-items:center;">
+            <img style="height:500px; width:590px; margin-top: 100px;" src="https://images.samsung.com/is/image/samsung/p6pim/uk/ue43cu7100kxxu/gallery/uk-uhd-4k-tv-ue43cu7100kxxu-front-black-536701487?$2052_1641_PNG$">
+            <div style="display:flex; flex-direction:column; margin-left: 20px;">
+                <h1 style="font-weight: 600;">Discover new Products</h1>
+                <h2 style="color: grey; font-size: medium;">Explore our curated collection of high-quality <br />products designed to enhance your lifestyle. </h2>
+                <a class="shop-button" asp-controller="Products" asp-action="Index">Shop Now!</a>
+            </div>
+    </section>
+    <section style="width: 100%;padding-top: 3rem;padding-bottom: 3rem;background-color:rgb(209 213 219);">
+        <div style="max-width:100%;margin-left:auto;margin-right:auto;display:grid;align-items:center;gap:1rem;padding-left:1rem;padding-right:1rem;text-align:center">
+            <div style="margin-top: 0.75rem;">
+                <h2 style="font-size:30px;line-height:36px;font-weight:700;letter-spacing:-0.05em;">Featured Products</h2>
+                <p style="margin-left:auto; margin-right:auto;max-width:700px;color: #6b7280"> Discover our top-selling products that are sure to impress.</p>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="card" data-v0-t="card">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1693086369818" alt="Product 1" class="aspect-square overflow-hidden rounded-t-lg object-cover" />
+                <div class="card-content">
+                    <h3>IPhone 13</h3>
+                    <p>$49.99</p>
+                    <a class="button" asp-controller="Products" asp-action="Details" asp-route-id="2"> View Product </a>
+                </div>
+            </div>
+            <div class="card" data-v0-t="card">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/PDP-Highlight-Consumer-Laptop-5-Platinum-001-1" alt="Product 2" class="aspect-square overflow-hidden rounded-t-lg object-cover" />
+                <div class="card-content">
+                    <h3>Dell Laptop</h3>
+                    <p>$49.99</p>
+                    <a class="button" asp-controller="Products" asp-action="Details" asp-route-id="3"> View Product </a>
+                </div>
+            </div>
+            <div class="card" data-v0-t="card">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQTQ3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1687660671363" alt="Product 3" class="aspect-square overflow-hidden rounded-t-lg object-cover" />
+                <div class="card-content">
+                    <h3>Beats Headphones</h3>
+                    <p>$49.99</p>
+                    <a class="button" asp-controller="Products" asp-action="Details" asp-route-id="4"> View Product </a>
+                </div>
+            </div>
+            <div class="card" data-v0-t="card">
+                <img src="https://m.media-amazon.com/images/I/61RVLvNTxnL._AC_UF1000,1000_QL80_.jpg" alt="Product 4" class="aspect-square overflow-hidden rounded-t-lg object-cover" />
+                <div class="card-content">
+                    <h3>Graphics Card</h3>
+                    <p>$49.99</p>
+                    <a class="button" asp-controller="Products" asp-action="Details" asp-route-id="5"> View Product </a>
+                </div>
+            </div>
+        </div> 
+    </section>
+    </div>
+</body>
+</html>
